@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "E55",
+        "module": "CommonJS"
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}
