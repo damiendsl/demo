@@ -7,10 +7,13 @@ myRouter.get('/',(req:Request,res:Response)=>{
     return res.json(data);
 });
 myRouter.post('/',(req:Request,res:Response)=>{
-    console.log('req.body=>'+  bodyParser.json );
-    //const {todo=null} = req.body;
+    const todo={
+        id:repo.getAll().length+1,
+        title:req.body.title
+    };
+    repo.add(todo);
     const data = repo.getAll();
-    return res.json(data);
+    return res.json(data); 
 });
 myRouter.get('/:id',(req:Request,res:Response)=>{
  const data=repo.getById(parseInt(req.params.id));
